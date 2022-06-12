@@ -14,7 +14,7 @@ public class Radio {
         if (numberRadioStation < 0) {
             return;
         }
-        if (numberRadioStation > 9) {
+        if (numberRadioStation > 10) {
             return;
         }
         this.numberRadioStation = numberRadioStation;
