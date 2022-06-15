@@ -1,9 +1,18 @@
 package ru.netology.radioman;
 
 public class Radio {
-    public int numberRadioStation;
+    private int numberRadioStation;
+    private int currentVolume;
+    private int quantityRadioStation = 10;
+    private int maxCurrentVolume = 10;
 
-    public int currentVolume;
+    public Radio(int quantityRadioStation) {
+        this.quantityRadioStation = quantityRadioStation;
+    }
+
+    public Radio() {
+
+    }
 
     public int getNumberRadioStation() {  //текущий номер радиостанции
 
@@ -14,14 +23,14 @@ public class Radio {
         if (numberRadioStation < 0) {
             return;
         }
-        if (numberRadioStation > 10) {
+        if (numberRadioStation > (quantityRadioStation - 1)) {
             return;
         }
         this.numberRadioStation = numberRadioStation;
     }
 
     public void nextRadioStation() {  // переключение на следующую радиостанцию
-        if (numberRadioStation < 9) {
+        if (numberRadioStation < (quantityRadioStation - 1)) {
             numberRadioStation = numberRadioStation + 1;
         } else {
             numberRadioStation = 0;
@@ -34,7 +43,7 @@ public class Radio {
         if (numberRadioStation > 0 ) {
             numberRadioStation = numberRadioStation - 1;
         } else {
-            numberRadioStation = 9;
+            numberRadioStation = (quantityRadioStation - 1);
         }
 
     }
@@ -47,14 +56,14 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > maxCurrentVolume) {
             return;
         }
         this.currentVolume = currentVolume;
     }
 
     public void increaseVolume() {  // громкость на одну еденицу больше
-        if (currentVolume < 10) {
+        if (currentVolume < maxCurrentVolume) {
             currentVolume = currentVolume + 1;
         }
     }
