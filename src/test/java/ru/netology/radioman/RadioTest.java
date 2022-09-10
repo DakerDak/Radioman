@@ -7,6 +7,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class RadioTest {
 
+    @Test
+    public void setQuantityRadioStation () {
+        Radio rad = new Radio(30);
+
+
+    }
+
     @ParameterizedTest
     @CsvSource(value = {"first check,8,8,",
             "second check,9,9",
